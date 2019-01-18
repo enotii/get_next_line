@@ -6,17 +6,17 @@
 /*   By: caking <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 04:30:25 by caking            #+#    #+#             */
-/*   Updated: 2019/01/11 04:34:38 by caking           ###   ########.fr       */
+/*   Updated: 2019/01/15 21:54:08 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static int line_reader(char **str, int fd)
+static		int		line_reader(char **str, int fd)
 {
-	int flag;
-	char *sbuff;
-	char buf[BUFF_SIZE + 1];
+	int		flag;
+	char	*sbuff;
+	char	buf[BUFF_SIZE + 1];
 
 	if ((flag = read(fd, buf, BUFF_SIZE)) == -1)
 		return (-1);
@@ -28,10 +28,10 @@ static int line_reader(char **str, int fd)
 	return (flag);
 }
 
-static int next_line(char **str, char **line, char *s)
+static		int		next_line(char **str, char **line, char *s)
 {
-	int i;
-	char *sbuff;
+	int		i;
+	char	*sbuff;
 
 	i = 0;
 	if (*s == '\n')
@@ -51,11 +51,11 @@ static int next_line(char **str, char **line, char *s)
 	return (i);
 }
 
-int get_next_line(const int fd, char **line)
+int					get_next_line(const int fd, char **line)
 {
-	int flag;
-	char *sbuff;
-	static char *str;
+	int				flag;
+	char			*sbuff;
+	static char		*str;
 
 	if (str == 0)
 		str = "";
