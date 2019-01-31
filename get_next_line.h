@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: caking <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/11 04:25:52 by caking            #+#    #+#             */
-/*   Updated: 2019/01/15 22:07:23 by caking           ###   ########.fr       */
+/*   Created: 2019/01/31 02:28:19 by caking            #+#    #+#             */
+/*   Updated: 2019/01/31 02:28:28 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include "libft/includes/libft.h"
-# define BUFF_SIZE 1
+# include "libft/libft.h"
+# define BUFF_SIZE 5
+# define MAX_FD 256
 
 int	get_next_line(const int fd, char **line);
 

@@ -5,37 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: caking <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/01/15 21:29:29 by caking            #+#    #+#              #
-#    Updated: 2019/01/15 21:29:35 by caking           ###   ########.fr        #
+#    Created: 2018/12/07 21:28:35 by caking            #+#    #+#              #
+#    Updated: 2018/12/07 21:47:09 by caking           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-HEADER = includes
-
-SRC = ft_bzero.c \
-	  ft_strcat.c \
-	  ft_strcpy.c \
-	  ft_memset.c \
-	  ft_strlen.c \
-	  ft_strnew.c \
-	  ft_strjoin.c \
-	  ft_memalloc.c
-
-OBJ = $(SRC:.c=.o)
-
-$(NAME):
-	@gcc -Wall -Wextra -Werror -c $(SRC) -I $(HEADER)
-	@ar rc $(NAME) $(OBJ)
-	@ranlib $(NAME)
-
+PATH_SRC = ./srcs
+SRC = $(PATH_SRC)/*.c
+HEADER = ./includes/libft.h
+OBJ =  *.o
 all: $(NAME)
-
+$(NAME):
+	gcc -Wall -Wextra -Werror -c *.c -I libft.h
+	ar rc libft.a $(OBJ)
+	ranlib libft.a
 clean:
-	@rm -f $(OBJ)
-
+	rm -rf *.o
 fclean: clean
-	@rm -f $(NAME)
-
+	rm -rf $(NAME)
 re: fclean all
+
+

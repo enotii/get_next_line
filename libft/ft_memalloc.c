@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: caking <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/15 22:10:32 by caking            #+#    #+#             */
-/*   Updated: 2019/01/15 22:11:07 by caking           ###   ########.fr       */
+/*   Created: 2018/12/18 23:50:41 by caking            #+#    #+#             */
+/*   Updated: 2018/12/19 00:20:06 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void	*s;
+	void	*mem;
 
-	if ((s = malloc(size)) == NULL)
+	mem = malloc(size);
+	if (!mem)
 		return (NULL);
-	ft_bzero(s, size);
-	return (s);
+	ft_bzero(mem, size);
+	return (mem);
 }

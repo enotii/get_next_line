@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: caking <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/15 22:12:09 by caking            #+#    #+#             */
-/*   Updated: 2019/01/15 22:12:12 by caking           ###   ########.fr       */
+/*   Created: 2018/12/07 21:14:14 by caking            #+#    #+#             */
+/*   Updated: 2018/12/19 00:34:01 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,15 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	b += len;
-	while (len--)
-		*((char *)(--b)) = (unsigned char)c;
-	return (b);
+	char		*buff;
+	size_t		i;
+
+	buff = b;
+	i = 0;
+	while (i < len)
+	{
+		buff[i] = c;
+		i++;
+	}
+	return (buff);
 }

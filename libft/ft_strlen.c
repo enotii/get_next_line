@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: caking <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/15 22:13:59 by caking            #+#    #+#             */
-/*   Updated: 2019/01/15 22:14:03 by caking           ###   ########.fr       */
+/*   Created: 2018/12/10 21:57:46 by caking            #+#    #+#             */
+/*   Updated: 2018/12/10 21:57:57 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	int i;
 
-	len = 0;
-	while (*s)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		len++;
-		s++;
+		i++;
 	}
-	return (len);
+	return (i);
 }

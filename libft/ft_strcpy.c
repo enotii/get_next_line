@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: caking <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/15 22:13:32 by caking            #+#    #+#             */
-/*   Updated: 2019/01/15 22:13:39 by caking           ###   ########.fr       */
+/*   Created: 2018/12/10 21:56:32 by caking            #+#    #+#             */
+/*   Updated: 2018/12/10 21:57:39 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	size_t	n;
+	int i;
 
-	n = 0;
-	while (src[n])
+	i = 0;
+	while (src[i] != '\0')
 	{
-		dst[n] = src[n];
-		n++;
+		dst[i] = src[i];
+		i++;
 	}
-	dst[n] = '\0';
+	dst[i] = '\0';
 	return (dst);
 }

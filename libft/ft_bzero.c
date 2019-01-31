@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: caking <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/15 22:11:58 by caking            #+#    #+#             */
-/*   Updated: 2019/01/15 22:12:01 by caking           ###   ########.fr       */
+/*   Created: 2018/12/07 22:32:33 by caking            #+#    #+#             */
+/*   Updated: 2018/12/07 22:56:53 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,16 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, '\0', n);
+	char	*buff;
+	size_t	i;
+
+	buff = s;
+	i = 0;
+	if (!n || (n <= 0))
+		return ;
+	while (i < n)
+	{
+		buff[i] = '\0';
+		i++;
+	}
 }

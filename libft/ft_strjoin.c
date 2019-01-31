@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: caking <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/15 21:30:21 by caking            #+#    #+#             */
-/*   Updated: 2019/01/15 22:11:38 by caking           ###   ########.fr       */
+/*   Created: 2018/12/19 00:39:27 by caking            #+#    #+#             */
+/*   Updated: 2018/12/19 00:50:19 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,24 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*s;
+	char	*new_str;
+	size_t	i;
+	size_t	j;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	if ((s = ft_strnew((size_t)ft_strlen(s1) + ft_strlen(s2))) == NULL)
-		return (s);
-	ft_strcpy(s, s1);
-	ft_strcat(s, s2);
-	return (s);
+	if (!s1 || !s2)
+		return (NULL);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	new_str = ft_strnew(s1_len + s2_len);
+	if (!new_str)
+		return (NULL);
+	i = -1;
+	j = -1;
+	while (++i < s1_len)
+		*(new_str + i) = *(s1 + i);
+	while (++j < s2_len)
+		*(new_str + i++) = *(s2 + j);
+	return (new_str);
 }
